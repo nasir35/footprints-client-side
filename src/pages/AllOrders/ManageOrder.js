@@ -5,14 +5,17 @@ const ManageOrder = ({singleOrder, row}) => {
 
     //UPDATE order status
     const handleUpdate = id => {
-        const url = `https://footprints-node-server.herokuapp.com/orders/${id}`;
-        fetch(url, {
-            method : 'PUT'
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+        const proceedToUpdate = window.confirm('Are you sure about approving the order?');
+        if(proceedToUpdate){
+            const url = `https://footprints-node-server.herokuapp.com/orders/${id}`;
+            fetch(url, {
+                method : 'PUT'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+        }
     }
     //DELETE an order
     const handleDelete = id => {
