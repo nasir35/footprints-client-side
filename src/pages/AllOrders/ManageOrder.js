@@ -3,6 +3,17 @@ import React from 'react';
 const ManageOrder = ({singleOrder, row}) => {
     const {packageName, price, packageImg, email, date, orderStatus} = singleOrder;
 
+    //UPDATE order status
+    const handleUpdate = id => {
+        const url = `http://localhost:5000/orders/${id}`;
+        fetch(url, {
+            method : 'PUT'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+    }
     //DELETE an order
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel the order?');
@@ -33,7 +44,7 @@ const ManageOrder = ({singleOrder, row}) => {
                 <td>{email}</td>
                 <td className="">{date}</td>
                 <td className="" className={`${orderStatus=='pending' ? 'text-coral' : 'text-green-custom'}`}>{orderStatus}</td>
-                <td className=""><button className="mr-3 bg-green-custom rounded p-1 text-white">Approve</button><button className="bg-red-600 p-1 rounded text-white" onClick={() => handleDelete(singleOrder._id)}>Cancel</button></td>
+                <td className=""><button className="mr-3 bg-green-custom rounded p-1 text-white" onClick={() => handleUpdate(singleOrder._id)}>Approve</button><button className="bg-red-600 p-1 rounded text-white" onClick={() => handleDelete(singleOrder._id)}>Cancel</button></td>
             </tr>
         </>
     );

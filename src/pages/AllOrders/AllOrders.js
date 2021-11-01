@@ -8,14 +8,17 @@ const AllOrders = () => {
         .then(res => res.json())
         .then(allOrders => setOrders(allOrders))
     }, [orders]);
-    if(orders.length==0){
-        return (
-            <div class="flex justify-center items-center py-6">
-                <div className="animate-bounce text-stromboli mr-5 font-qsand font-medium">loading...</div>
-                <div class=" animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-coral"></div>
-            </div>
-        );
-    }    
+
+
+    //----------------------Commenting the spinner, because when orderlist is empty it continiously spinnig...!
+    // if(orders.length==0){
+    //     return (
+    //         <div class="flex justify-center items-center py-6">
+    //             <div className="animate-bounce text-stromboli mr-5 font-qsand font-medium">loading...</div>
+    //             <div class=" animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-coral"></div>
+    //         </div>
+    //     );
+    // }    
     return (
         <div>
             <div id="heading" className="text-center">
