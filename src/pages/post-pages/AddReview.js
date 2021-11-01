@@ -28,7 +28,7 @@ const AddReview = () => {
                 <h2 className="inline-block border-coral text-stromboli text-2xl px-4 border-b-4 rounded font-semibold font-qsand">Give a review!</h2>
             </div>
             <div className="text-center my-3">
-                <form onSubmit={handleSubmit(onSubmit)} className="w-2/6 mx-auto">
+                <form onSubmit={handleSubmit(onSubmit)} className="md:w-2/6 w-full mx-auto">
                     <input type="text" {...register('name')} className="block w-full border-2 rounded px-3 py-1 mb-3" placeholder="name" id="name" />
                     <input type="text" {...register('profession')} className="block w-full border-2 rounded px-3 py-1 mb-3" placeholder="profession" id="profession" />
                     <input type="text" {...register('img')} className="block w-full border-2 rounded px-3 py-1 mb-3" placeholder="img link" id="img" />

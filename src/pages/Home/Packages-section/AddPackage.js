@@ -30,7 +30,7 @@ const AddPackage = () => {
             <div className="text-center">
                 <h2 className="inline-block text-2xl text-green-custom font-medium border-b-4 pb-1 font-roboto px-4 rounded border-green-custom mb-5">Add a Package</h2>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className="w-2/4 mx-auto">
+            <form onSubmit={handleSubmit(onSubmit)} className="md:w-2/4 w-full mx-auto">
                 <div className="w-full grid grid-cols-12 border-b mb-3 px-4">
                     <label htmlFor="img" className="col-span-3 font-medium text-gray-600">Image Link</label>
                     <input {...register("img")} id="img" className="border col-span-9 px-3 py-1 bg-gray-50 mb-1 rounded" placeholder="https://www.image.com.1.png"/>
