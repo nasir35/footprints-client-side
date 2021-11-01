@@ -5,7 +5,7 @@ const ManageOrder = ({singleOrder, row}) => {
 
     //UPDATE order status
     const handleUpdate = id => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://footprints-node-server.herokuapp.com/orders/${id}`;
         fetch(url, {
             method : 'PUT'
         })
